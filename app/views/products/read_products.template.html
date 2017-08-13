@@ -1,0 +1,48 @@
+<div layout="row" ng-controller="productsController" ng-cloak>
+    <div flex="10"></div>
+ 
+    <div flex="80" class='m-20px-0'>
+ 
+      <!-- page title & 'create product' button -->
+      <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+              <!-- page title -->
+              <div flex md-truncate>
+                  <h3 class="md-headline">Products</h3>
+              </div>
+
+              <!-- 'create' product button will be here -->
+              <md-button class="md-raised" ng-click="showCreateProductForm()">Create</md-button>
+          </div>
+      </md-toolbar>
+
+      <!-- 'search' bar will be here -->
+
+      
+
+      <!-- Cards -->
+      <md-content class="md-padding" layout-xs="column" layout="row" ng-init="readProducts()">
+        <div flex-xs flex-gt-xs="50" layout="column">
+          <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch ng-repeat="product in products">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{product.Name}}</span>
+                <span class="md-subhead">{{product.Description}}</span>
+              </md-card-title-text>
+              <md-card-title-media>
+                <span class="md-headline">${{product.Price}}</span>
+                <!-- <div class="md-media-lg card-media"></div> -->
+              </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button ng-click="edit(product.ID)">Edit</md-button>
+              <md-button ng-click="delete(product.ID)">Delete</md-button>
+            </md-card-actions>
+          </md-card>
+        </div>
+      </md-content>
+      <!-- <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox> -->
+    </div>
+ 
+    <div flex="10"></div>
+</div> <!-- end row -->
