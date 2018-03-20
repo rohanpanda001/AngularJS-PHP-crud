@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1:3306
+<<<<<<< HEAD
 -- Generation Time: Mar 20, 2018 at 06:56 PM
+=======
+-- Generation Time: Aug 13, 2017 at 09:00 PM
+>>>>>>> cb70767aab6e45d35ae4da949a79776444243619
 -- Server version: 5.7.17
 -- PHP Version: 7.0.13
 
@@ -42,6 +46,7 @@ INSERT INTO `products` (`ID`, `Name`, `Description`, `Price`, `Category_id`) VAL
 (7, 'Mac', 'Apple', '999', 1),
 (8, 'iPhone', 'Apple', '199', 1);
 
+<<<<<<< HEAD
 -- --------------------------------------------------------
 
 --
@@ -63,6 +68,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`ID`, `First_Name`, `Last_Name`, `Email`, `Password`) VALUES
 (1, 'Rohan', 'Panda', 'rohan.panda1@gmail.com', 'rohan001');
 
+=======
+>>>>>>> cb70767aab6e45d35ae4da949a79776444243619
 --
 -- Indexes for dumped tables
 --
@@ -74,12 +81,15 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`ID`);
 
 --
+<<<<<<< HEAD
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`ID`);
 
 --
+=======
+>>>>>>> cb70767aab6e45d35ae4da949a79776444243619
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -87,12 +97,16 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
+<<<<<<< HEAD
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+=======
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+>>>>>>> cb70767aab6e45d35ae4da949a79776444243619
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
