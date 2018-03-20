@@ -1,3 +1,60 @@
+app.controller('SigninCtrl',function($state,$scope,$http){
+	$scope.login_error = false;
+  	$scope.login_redirection = false;
+
+  	$scope.login = function() {
+ 
+			$http({
+				method: 'POST',
+				url: './app/queries/access/login.php',
+				data: {
+					email: $scope.user.email,
+					password: $scope.user.password
+				},
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+			})
+			.success(function(data) {
+        		console.log(data);
+				if ( data.trim() === "true") {
+        			$state.go('products.read');
+				} else {
+                	$scope.login_error = true;
+				}
+			})
+		}
+});
+app.controller('SignupCtrl',function($state,$scope,$http){
+	$scope.email_exists=false;
+	$scope.signup_error=false;
+
+	$scope.register= function() {
+		$http({
+			method: 'POST',
+			url: './app/queries/access/signup.php',
+			data:
+			{
+				fname: $scope.fname,
+				lname: $scope.lname,
+				email: $scope.email,
+				password: $scope.password
+			},
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+
+		})
+		.success(function(data) {
+    		console.log(data.trim());
+			if ( data.trim() === "exits") {
+				$scope.email_exists=true;
+			} else if( data.trim() === "ok") {
+				$state.go('products.read');
+			} else {
+				$scope.signup_error=true;
+
+			}
+		})
+	}
+
+});
 app.controller('productsController', function($scope, $mdDialog, $mdToast, productsFactory){
  
     // read products
